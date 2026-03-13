@@ -1,0 +1,206 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-cloud-operations-suite/refs/heads/main/json-schema/json-schema.yml
+title: Google Cloud Operations Suite Schema
+description: >-
+  Schema defining the core resources of the Google Cloud Operations Suite,
+  spanning monitoring, logging, and diagnostics capabilities.
+type: object
+properties:
+  timeSeries:
+    $ref: '#/$defs/TimeSeries'
+  alertPolicy:
+    $ref: '#/$defs/AlertPolicy'
+  logEntry:
+    $ref: '#/$defs/LogEntry'
+  dashboard:
+    $ref: '#/$defs/Dashboard'
+  uptimeCheckConfig:
+    $ref: '#/$defs/UptimeCheckConfig'
+$defs:
+  TimeSeries:
+    type: object
+    title: Time Series
+    description: A collection of data points describing time-varying metric values.
+    properties:
+      metric:
+        type: object
+        properties:
+          type:
+            type: string
+            description: The metric type identifier.
+          labels:
+            type: object
+            additionalProperties:
+              type: string
+      resource:
+        type: object
+        properties:
+          type:
+            type: string
+          labels:
+            type: object
+            additionalProperties:
+              type: string
+      metricKind:
+        type: string
+        enum:
+          - GAUGE
+          - DELTA
+          - CUMULATIVE
+      valueType:
+        type: string
+        enum:
+          - BOOL
+          - INT64
+          - DOUBLE
+          - STRING
+          - DISTRIBUTION
+      points:
+        type: array
+        items:
+          type: object
+          properties:
+            interval:
+              type: object
+              properties:
+                startTime:
+                  type: string
+                  format: date-time
+                endTime:
+                  type: string
+                  format: date-time
+            value:
+              type: object
+    required:
+      - metric
+      - resource
+  AlertPolicy:
+    type: object
+    title: Alert Policy
+    description: A policy for generating alerts based on conditions.
+    properties:
+      name:
+        type: string
+      displayName:
+        type: string
+      conditions:
+        type: array
+        items:
+          type: object
+      combiner:
+        type: string
+        enum:
+          - AND
+          - OR
+          - AND_WITH_MATCHING_RESOURCE
+      enabled:
+        type: boolean
+      notificationChannels:
+        type: array
+        items:
+          type: string
+    required:
+      - displayName
+      - conditions
+      - combiner
+  LogEntry:
+    type: object
+    title: Log Entry
+    description: An individual entry in a Cloud Logging log.
+    properties:
+      logName:
+        type: string
+        description: The resource name of the log.
+      resource:
+        type: object
+        properties:
+          type:
+            type: string
+          labels:
+            type: object
+            additionalProperties:
+              type: string
+      timestamp:
+        type: string
+        format: date-time
+        description: The time the event described by the log entry occurred.
+      severity:
+        type: string
+        description: The severity of the log entry.
+        enum:
+          - DEFAULT
+          - DEBUG
+          - INFO
+          - NOTICE
+          - WARNING
+          - ERROR
+          - CRITICAL
+          - ALERT
+          - EMERGENCY
+      textPayload:
+        type: string
+        description: The text payload of the log entry.
+      jsonPayload:
+        type: object
+        description: The JSON payload of the log entry.
+      insertId:
+        type: string
+        description: A unique identifier for the log entry.
+      labels:
+        type: object
+        additionalProperties:
+          type: string
+    required:
+      - logName
+      - resource
+  Dashboard:
+    type: object
+    title: Dashboard
+    description: A Cloud Monitoring dashboard for visualizing metrics.
+    properties:
+      name:
+        type: string
+        description: The resource name of the dashboard.
+      displayName:
+        type: string
+        description: The display name of the dashboard.
+      gridLayout:
+        type: object
+      mosaicLayout:
+        type: object
+      rowLayout:
+        type: object
+      columnLayout:
+        type: object
+      dashboardFilters:
+        type: array
+        items:
+          type: object
+    required:
+      - displayName
+  UptimeCheckConfig:
+    type: object
+    title: Uptime Check Config
+    description: Configuration for monitoring the availability of a resource.
+    properties:
+      name:
+        type: string
+      displayName:
+        type: string
+      period:
+        type: string
+        description: How often the uptime check runs.
+      timeout:
+        type: string
+        description: The maximum time to wait for the check.
+      httpCheck:
+        type: object
+        properties:
+          path:
+            type: string
+          port:
+            type: integer
+          useSsl:
+            type: boolean
+    required:
+      - displayName

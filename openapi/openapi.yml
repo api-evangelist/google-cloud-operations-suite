@@ -1,0 +1,435 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Operations Suite API
+  description: >-
+    The Operations Suite API provides a unified interface for managing
+    observability across Google Cloud services. This specification covers the
+    core monitoring and logging capabilities including time series metrics,
+    alert policies, log entries, dashboards, and service monitoring that form
+    the foundation of the Operations Suite.
+  version: v3
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/products/operations
+externalDocs:
+  description: Google Cloud Operations Suite Documentation
+  url: https://cloud.google.com/products/operations
+servers:
+  - url: https://monitoring.googleapis.com
+    description: Cloud Monitoring API
+  - url: https://logging.googleapis.com
+    description: Cloud Logging API
+paths:
+  /v3/projects/{projectId}/timeSeries:
+    get:
+      operationId: listTimeSeries
+      summary: List Time Series
+      description: Lists time series that match a filter for monitoring data.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: filter
+          in: query
+          schema:
+            type: string
+        - name: interval.startTime
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - name: interval.endTime
+          in: query
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTimeSeriesResponse'
+    post:
+      operationId: createTimeSeries
+      summary: Create Time Series
+      description: Creates or adds data to one or more time series.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTimeSeriesRequest'
+      responses:
+        '200':
+          description: Successful response
+  /v3/projects/{projectId}/alertPolicies:
+    get:
+      operationId: listAlertPolicies
+      summary: List Alert Policies
+      description: Lists the existing alerting policies for the project.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAlertPoliciesResponse'
+    post:
+      operationId: createAlertPolicy
+      summary: Create Alert Policy
+      description: Creates a new alerting policy.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlertPolicy'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertPolicy'
+  /v2/entries:list:
+    post:
+      operationId: listLogEntries
+      summary: List Log Entries
+      description: Lists log entries from Cloud Logging.
+      servers:
+        - url: https://logging.googleapis.com
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                resourceNames:
+                  type: array
+                  items:
+                    type: string
+                filter:
+                  type: string
+                orderBy:
+                  type: string
+                pageSize:
+                  type: integer
+                pageToken:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListLogEntriesResponse'
+  /v2/entries:write:
+    post:
+      operationId: writeLogEntries
+      summary: Write Log Entries
+      description: Writes log entries to Cloud Logging.
+      servers:
+        - url: https://logging.googleapis.com
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                logName:
+                  type: string
+                resource:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    labels:
+                      type: object
+                      additionalProperties:
+                        type: string
+                entries:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/LogEntry'
+      responses:
+        '200':
+          description: Successful response
+  /v1/projects/{projectId}/dashboards:
+    get:
+      operationId: listDashboards
+      summary: List Dashboards
+      description: Lists the existing dashboards for the project.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDashboardsResponse'
+    post:
+      operationId: createDashboard
+      summary: Create Dashboard
+      description: Creates a new custom dashboard.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dashboard'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard'
+  /v3/projects/{projectId}/uptimeCheckConfigs:
+    get:
+      operationId: listUptimeCheckConfigs
+      summary: List Uptime Check Configs
+      description: Lists the existing uptime check configurations.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUptimeCheckConfigsResponse'
+components:
+  schemas:
+    TimeSeries:
+      type: object
+      description: A collection of data points for a metric.
+      properties:
+        metric:
+          type: object
+          properties:
+            type:
+              type: string
+            labels:
+              type: object
+              additionalProperties:
+                type: string
+        resource:
+          type: object
+          properties:
+            type:
+              type: string
+            labels:
+              type: object
+              additionalProperties:
+                type: string
+        metricKind:
+          type: string
+        valueType:
+          type: string
+        points:
+          type: array
+          items:
+            type: object
+            properties:
+              interval:
+                type: object
+                properties:
+                  startTime:
+                    type: string
+                    format: date-time
+                  endTime:
+                    type: string
+                    format: date-time
+              value:
+                type: object
+    AlertPolicy:
+      type: object
+      description: A policy for generating alerts.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        conditions:
+          type: array
+          items:
+            type: object
+        combiner:
+          type: string
+        enabled:
+          type: boolean
+        notificationChannels:
+          type: array
+          items:
+            type: string
+    LogEntry:
+      type: object
+      description: An individual entry in a log.
+      properties:
+        logName:
+          type: string
+        resource:
+          type: object
+          properties:
+            type:
+              type: string
+            labels:
+              type: object
+              additionalProperties:
+                type: string
+        timestamp:
+          type: string
+          format: date-time
+        severity:
+          type: string
+          enum:
+            - DEFAULT
+            - DEBUG
+            - INFO
+            - NOTICE
+            - WARNING
+            - ERROR
+            - CRITICAL
+            - ALERT
+            - EMERGENCY
+        textPayload:
+          type: string
+        jsonPayload:
+          type: object
+        insertId:
+          type: string
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+    Dashboard:
+      type: object
+      description: A Cloud Monitoring dashboard.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        gridLayout:
+          type: object
+        mosaicLayout:
+          type: object
+        rowLayout:
+          type: object
+        columnLayout:
+          type: object
+        dashboardFilters:
+          type: array
+          items:
+            type: object
+    UptimeCheckConfig:
+      type: object
+      description: Configuration for an uptime check.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        period:
+          type: string
+        timeout:
+          type: string
+        httpCheck:
+          type: object
+          properties:
+            path:
+              type: string
+            port:
+              type: integer
+            useSsl:
+              type: boolean
+    CreateTimeSeriesRequest:
+      type: object
+      properties:
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSeries'
+    ListTimeSeriesResponse:
+      type: object
+      properties:
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSeries'
+        nextPageToken:
+          type: string
+    ListAlertPoliciesResponse:
+      type: object
+      properties:
+        alertPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertPolicy'
+        nextPageToken:
+          type: string
+    ListLogEntriesResponse:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/LogEntry'
+        nextPageToken:
+          type: string
+    ListDashboardsResponse:
+      type: object
+      properties:
+        dashboards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dashboard'
+        nextPageToken:
+          type: string
+    ListUptimeCheckConfigsResponse:
+      type: object
+      properties:
+        uptimeCheckConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/UptimeCheckConfig'
+        nextPageToken:
+          type: string

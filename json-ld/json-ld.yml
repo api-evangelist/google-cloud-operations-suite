@@ -1,0 +1,46 @@
+"@context":
+  "@vocab": https://schema.org/
+  gcloud: https://cloud.google.com/monitoring/api/ref_v3/rest/v3/
+  logging: https://cloud.google.com/logging/docs/reference/v2/rest/v2/
+  name: schema:name
+  description: schema:description
+  url: schema:url
+  TimeSeries:
+    "@id": gcloud:projects.timeSeries
+    "@type": schema:Dataset
+    metric: schema:variableMeasured
+    resource: schema:about
+    metricKind: schema:measurementTechnique
+    valueType: schema:unitCode
+    points: schema:datasetTimeInterval
+  AlertPolicy:
+    "@id": gcloud:projects.alertPolicies
+    "@type": schema:Action
+    displayName: schema:name
+    conditions: schema:object
+    combiner: schema:actionOption
+    enabled: schema:actionStatus
+    notificationChannels: schema:recipient
+  LogEntry:
+    "@id": logging:entries
+    "@type": schema:DigitalDocument
+    logName: schema:name
+    resource: schema:about
+    timestamp: schema:dateCreated
+    severity: schema:importance
+    textPayload: schema:text
+    jsonPayload: schema:associatedMedia
+    insertId: schema:identifier
+  Dashboard:
+    "@id": gcloud:projects.dashboards
+    "@type": schema:WebPage
+    displayName: schema:name
+    gridLayout: schema:mainEntity
+    mosaicLayout: schema:mainEntity
+  UptimeCheckConfig:
+    "@id": gcloud:projects.uptimeCheckConfigs
+    "@type": schema:MonitorAction
+    displayName: schema:name
+    period: schema:repeatFrequency
+    timeout: schema:duration
+    httpCheck: schema:target
