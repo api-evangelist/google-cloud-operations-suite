@@ -52,6 +52,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListTimeSeriesResponse'
+      tags:
+        - Projects
     post:
       operationId: createTimeSeries
       summary: Google Cloud Operations Suite Create Time Series
@@ -71,6 +73,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Projects
   /v3/projects/{projectId}/alertPolicies:
     get:
       operationId: listAlertPolicies
@@ -89,6 +93,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListAlertPoliciesResponse'
+      tags:
+        - Projects
     post:
       operationId: createAlertPolicy
       summary: Google Cloud Operations Suite Create Alert Policy
@@ -112,6 +118,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AlertPolicy'
+      tags:
+        - Projects
   /v2/entries:list:
     post:
       operationId: listLogEntries
@@ -145,6 +153,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListLogEntriesResponse'
+      tags:
+        - Entries:list
   /v2/entries:write:
     post:
       operationId: writeLogEntries
@@ -177,6 +187,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Entries:write
   /v1/projects/{projectId}/dashboards:
     get:
       operationId: listDashboards
@@ -195,6 +207,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListDashboardsResponse'
+      tags:
+        - Projects
     post:
       operationId: createDashboard
       summary: Google Cloud Operations Suite Create Dashboard
@@ -218,6 +232,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Dashboard'
+      tags:
+        - Projects
   /v3/projects/{projectId}/uptimeCheckConfigs:
     get:
       operationId: listUptimeCheckConfigs
@@ -236,6 +252,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListUptimeCheckConfigsResponse'
+      tags:
+        - Projects
 components:
   schemas:
     TimeSeries:
@@ -433,3 +451,7 @@ components:
             $ref: '#/components/schemas/UptimeCheckConfig'
         nextPageToken:
           type: string
+tags:
+  - name: Entries:list
+  - name: Entries:write
+  - name: Projects
