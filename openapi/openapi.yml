@@ -23,7 +23,7 @@ paths:
   /v3/projects/{projectId}/timeSeries:
     get:
       operationId: listTimeSeries
-      summary: List Time Series
+      summary: Google Cloud Operations Suite List Time Series
       description: Lists time series that match a filter for monitoring data.
       parameters:
         - name: projectId
@@ -54,7 +54,7 @@ paths:
                 $ref: '#/components/schemas/ListTimeSeriesResponse'
     post:
       operationId: createTimeSeries
-      summary: Create Time Series
+      summary: Google Cloud Operations Suite Create Time Series
       description: Creates or adds data to one or more time series.
       parameters:
         - name: projectId
@@ -74,7 +74,7 @@ paths:
   /v3/projects/{projectId}/alertPolicies:
     get:
       operationId: listAlertPolicies
-      summary: List Alert Policies
+      summary: Google Cloud Operations Suite List Alert Policies
       description: Lists the existing alerting policies for the project.
       parameters:
         - name: projectId
@@ -91,7 +91,7 @@ paths:
                 $ref: '#/components/schemas/ListAlertPoliciesResponse'
     post:
       operationId: createAlertPolicy
-      summary: Create Alert Policy
+      summary: Google Cloud Operations Suite Create Alert Policy
       description: Creates a new alerting policy.
       parameters:
         - name: projectId
@@ -115,7 +115,7 @@ paths:
   /v2/entries:list:
     post:
       operationId: listLogEntries
-      summary: List Log Entries
+      summary: Google Cloud Operations Suite List Log Entries
       description: Lists log entries from Cloud Logging.
       servers:
         - url: https://logging.googleapis.com
@@ -148,7 +148,7 @@ paths:
   /v2/entries:write:
     post:
       operationId: writeLogEntries
-      summary: Write Log Entries
+      summary: Google Cloud Operations Suite Write Log Entries
       description: Writes log entries to Cloud Logging.
       servers:
         - url: https://logging.googleapis.com
@@ -180,7 +180,7 @@ paths:
   /v1/projects/{projectId}/dashboards:
     get:
       operationId: listDashboards
-      summary: List Dashboards
+      summary: Google Cloud Operations Suite List Dashboards
       description: Lists the existing dashboards for the project.
       parameters:
         - name: projectId
@@ -197,7 +197,7 @@ paths:
                 $ref: '#/components/schemas/ListDashboardsResponse'
     post:
       operationId: createDashboard
-      summary: Create Dashboard
+      summary: Google Cloud Operations Suite Create Dashboard
       description: Creates a new custom dashboard.
       parameters:
         - name: projectId
@@ -221,7 +221,7 @@ paths:
   /v3/projects/{projectId}/uptimeCheckConfigs:
     get:
       operationId: listUptimeCheckConfigs
-      summary: List Uptime Check Configs
+      summary: Google Cloud Operations Suite List Uptime Check Configs
       description: Lists the existing uptime check configurations.
       parameters:
         - name: projectId
