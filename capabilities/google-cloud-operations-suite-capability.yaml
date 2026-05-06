@@ -1,0 +1,422 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Operations Suite API
+  description: The Operations Suite API provides a unified interface for managing observability across Google Cloud services.
+    This specification covers the core monitoring and logging capabilities including time series metrics, alert policies,
+    log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.
+  tags:
+  - Google
+  - Cloud
+  - Operations
+  - Suite
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-operations-suite
+    baseUri: https://monitoring.googleapis.com
+    description: Google Cloud Operations Suite API HTTP API.
+    resources:
+    - name: v3-projects-projectid-timeseries
+      path: /v3/projects/{projectId}/timeSeries
+      operations:
+      - name: listtimeseries
+        method: GET
+        description: Google Cloud Operations Suite List Time Series
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: filter
+          in: query
+          type: string
+        - name: interval.startTime
+          in: query
+          type: string
+        - name: interval.endTime
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createtimeseries
+        method: POST
+        description: Google Cloud Operations Suite Create Time Series
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v3-projects-projectid-alertpolicies
+      path: /v3/projects/{projectId}/alertPolicies
+      operations:
+      - name: listalertpolicies
+        method: GET
+        description: Google Cloud Operations Suite List Alert Policies
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createalertpolicy
+        method: POST
+        description: Google Cloud Operations Suite Create Alert Policy
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-entries-list
+      path: /v2/entries:list
+      operations:
+      - name: listlogentries
+        method: POST
+        description: Google Cloud Operations Suite List Log Entries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v2-entries-write
+      path: /v2/entries:write
+      operations:
+      - name: writelogentries
+        method: POST
+        description: Google Cloud Operations Suite Write Log Entries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-projects-projectid-dashboards
+      path: /v1/projects/{projectId}/dashboards
+      operations:
+      - name: listdashboards
+        method: GET
+        description: Google Cloud Operations Suite List Dashboards
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createdashboard
+        method: POST
+        description: Google Cloud Operations Suite Create Dashboard
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v3-projects-projectid-uptimecheckconfigs
+      path: /v3/projects/{projectId}/uptimeCheckConfigs
+      operations:
+      - name: listuptimecheckconfigs
+        method: GET
+        description: Google Cloud Operations Suite List Uptime Check Configs
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-operations-suite-rest
+    description: REST adapter for Google Cloud Operations Suite API.
+    resources:
+    - path: /v3/projects/{projectId}/timeSeries
+      name: listtimeseries
+      operations:
+      - method: GET
+        name: listtimeseries
+        description: Google Cloud Operations Suite List Time Series
+        call: google-cloud-operations-suite.listtimeseries
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v3/projects/{projectId}/timeSeries
+      name: createtimeseries
+      operations:
+      - method: POST
+        name: createtimeseries
+        description: Google Cloud Operations Suite Create Time Series
+        call: google-cloud-operations-suite.createtimeseries
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v3/projects/{projectId}/alertPolicies
+      name: listalertpolicies
+      operations:
+      - method: GET
+        name: listalertpolicies
+        description: Google Cloud Operations Suite List Alert Policies
+        call: google-cloud-operations-suite.listalertpolicies
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v3/projects/{projectId}/alertPolicies
+      name: createalertpolicy
+      operations:
+      - method: POST
+        name: createalertpolicy
+        description: Google Cloud Operations Suite Create Alert Policy
+        call: google-cloud-operations-suite.createalertpolicy
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v2/entries:list
+      name: listlogentries
+      operations:
+      - method: POST
+        name: listlogentries
+        description: Google Cloud Operations Suite List Log Entries
+        call: google-cloud-operations-suite.listlogentries
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v2/entries:write
+      name: writelogentries
+      operations:
+      - method: POST
+        name: writelogentries
+        description: Google Cloud Operations Suite Write Log Entries
+        call: google-cloud-operations-suite.writelogentries
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectId}/dashboards
+      name: listdashboards
+      operations:
+      - method: GET
+        name: listdashboards
+        description: Google Cloud Operations Suite List Dashboards
+        call: google-cloud-operations-suite.listdashboards
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectId}/dashboards
+      name: createdashboard
+      operations:
+      - method: POST
+        name: createdashboard
+        description: Google Cloud Operations Suite Create Dashboard
+        call: google-cloud-operations-suite.createdashboard
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v3/projects/{projectId}/uptimeCheckConfigs
+      name: listuptimecheckconfigs
+      operations:
+      - method: GET
+        name: listuptimecheckconfigs
+        description: Google Cloud Operations Suite List Uptime Check Configs
+        call: google-cloud-operations-suite.listuptimecheckconfigs
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-operations-suite-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Operations Suite API for AI agent use.
+    tools:
+    - name: listtimeseries
+      description: Google Cloud Operations Suite List Time Series
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-operations-suite.listtimeseries
+      with:
+        projectId: tools.projectId
+        filter: tools.filter
+        interval.startTime: tools.interval.startTime
+        interval.endTime: tools.interval.endTime
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: filter
+        type: string
+        description: filter
+      - name: interval.startTime
+        type: string
+        description: interval.startTime
+      - name: interval.endTime
+        type: string
+        description: interval.endTime
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createtimeseries
+      description: Google Cloud Operations Suite Create Time Series
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-operations-suite.createtimeseries
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listalertpolicies
+      description: Google Cloud Operations Suite List Alert Policies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-operations-suite.listalertpolicies
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createalertpolicy
+      description: Google Cloud Operations Suite Create Alert Policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-operations-suite.createalertpolicy
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listlogentries
+      description: Google Cloud Operations Suite List Log Entries
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-operations-suite.listlogentries
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: writelogentries
+      description: Google Cloud Operations Suite Write Log Entries
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-operations-suite.writelogentries
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdashboards
+      description: Google Cloud Operations Suite List Dashboards
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-operations-suite.listdashboards
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createdashboard
+      description: Google Cloud Operations Suite Create Dashboard
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-operations-suite.createdashboard
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listuptimecheckconfigs
+      description: Google Cloud Operations Suite List Uptime Check Configs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-operations-suite.listuptimecheckconfigs
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
