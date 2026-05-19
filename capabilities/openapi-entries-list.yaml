@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Operations Suite API — Entries:list
+  description: 'Google Cloud Operations Suite API — Entries:list. 1 operations. Lead operation: Google Cloud Operations Suite
+    List Log Entries. Self-contained Naftiko capability covering one Google Cloud Operations Suite business surface.'
+  tags:
+  - Google Cloud Operations Suite
+  - Entries:list
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_OPERATIONS_SUITE_API_KEY: GOOGLE_CLOUD_OPERATIONS_SUITE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-entries-list
+    baseUri: https://monitoring.googleapis.com
+    description: Google Cloud Operations Suite API — Entries:list business capability. Self-contained, no shared references.
+    resources:
+    - name: v2-entries:list
+      path: /v2/entries:list
+      operations:
+      - name: listlogentries
+        method: POST
+        description: Google Cloud Operations Suite List Log Entries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: openapi-entries-list-rest
+    port: 8080
+    description: REST adapter for Google Cloud Operations Suite API — Entries:list. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/v2/entries-list
+      name: v2-entries-list
+      description: REST surface for v2-entries:list.
+      operations:
+      - method: POST
+        name: listlogentries
+        description: Google Cloud Operations Suite List Log Entries
+        call: openapi-entries-list.listlogentries
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-entries-list-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Operations Suite API — Entries:list. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-operations-suite-list
+      description: Google Cloud Operations Suite List Log Entries
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: openapi-entries-list.listlogentries
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
