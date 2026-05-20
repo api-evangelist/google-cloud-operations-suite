@@ -11,67 +11,69 @@ modified: '2026-05-19'
 specificationVersion: '0.19'
 type: Index
 tags:
-- Error Reporting
-- Google Cloud
-- Logging
-- Monitoring
-- Observability
-- Operations
-- Profiling
-- Stackdriver
-- Tracing
+  - Error Reporting
+  - Google Cloud
+  - Logging
+  - Monitoring
+  - Observability
+  - Operations
+  - Profiling
+  - Stackdriver
+  - Tracing
 apis:
-- name: Google Cloud Operations Suite API
-  description: The Operations Suite API provides a unified interface for managing observability across Google Cloud services,
-    including monitoring metrics and dashboards, centralized logging, distributed tracing, continuous profiling, and automated
-    error reporting. It integrates the capabilities of Cloud Monitoring, Cloud Logging, Cloud Trace, Cloud Profiler, and Error
-    Reporting into a cohesive operations platform.
-  humanURL: https://cloud.google.com/products/operations
-  baseURL: https://monitoring.googleapis.com
-  properties:
-  - type: Documentation
-    url: https://cloud.google.com/monitoring/docs/reference/v3/rest
-  - type: OpenAPI
-    url: openapi/openapi.yml
-  - type: Authentication
-    url: https://cloud.google.com/docs/authentication
+  - name: Google Cloud Operations Suite API
+    description: The Operations Suite API provides a unified interface for managing observability across Google Cloud services,
+      including monitoring metrics and dashboards, centralized logging, distributed tracing, continuous profiling, and automated
+      error reporting. It integrates the capabilities of Cloud Monitoring, Cloud Logging, Cloud Trace, Cloud Profiler, and Error
+      Reporting into a cohesive operations platform.
+    humanURL: https://cloud.google.com/products/operations
+    baseURL: https://monitoring.googleapis.com
+    properties:
+    - type: Documentation
+      url: https://cloud.google.com/monitoring/docs/reference/v3/rest
+    - type: OpenAPI
+      url: openapi/openapi.yml
+    - type: Authentication
+      url: https://cloud.google.com/docs/authentication
+    - type: GettingStarted
+      url: https://cloud.google.com/monitoring/docs/quickstart
+    - type: JSONSchema
+      url: json-schema/json-schema.yml
+    - type: JSONLDContext
+      url: json-ld/json-ld.yml
+    - type: NaftikoCapability
+      url: capabilities/openapi-entries-list.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-entries-write.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-projects.yaml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/GoogleCloudPlatform
+  - type: Portal
+    url: https://cloud.google.com/products/operations
   - type: GettingStarted
     url: https://cloud.google.com/monitoring/docs/quickstart
-  - type: JSONSchema
-    url: json-schema/json-schema.yml
+  - type: Documentation
+    url: https://cloud.google.com/products/operations
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: Pricing
+    url: https://cloud.google.com/stackdriver/pricing
+  - type: TermsOfService
+    url: https://cloud.google.com/terms
+  - type: PrivacyPolicy
+    url: https://policies.google.com/privacy
+  - type: StatusPage
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/support
   - type: JSONLDContext
     url: json-ld/json-ld.yml
-  - type: NaftikoCapability
-    url: capabilities/openapi-entries-list.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-entries-write.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-projects.yaml
-common:
-- type: Portal
-  url: https://cloud.google.com/products/operations
-- type: GettingStarted
-  url: https://cloud.google.com/monitoring/docs/quickstart
-- type: Documentation
-  url: https://cloud.google.com/products/operations
-- type: Authentication
-  url: https://cloud.google.com/docs/authentication
-- type: Pricing
-  url: https://cloud.google.com/stackdriver/pricing
-- type: TermsOfService
-  url: https://cloud.google.com/terms
-- type: PrivacyPolicy
-  url: https://policies.google.com/privacy
-- type: StatusPage
-  url: https://status.cloud.google.com/
-- type: Support
-  url: https://cloud.google.com/support
-- type: JSONLDContext
-  url: json-ld/json-ld.yml
-- type: Integrations
-  url: https://cloud.google.com/marketplace
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
 integrations:
-- name: Become a Partner
+  - name: Become a Partner
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
