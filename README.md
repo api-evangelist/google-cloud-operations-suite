@@ -1,28 +1,66 @@
-# Google Cloud Operations Suite
+# Google Cloud Operations Suite (google-cloud-operations-suite)
 
 Google Cloud Operations Suite (formerly Stackdriver) provides integrated monitoring, logging, and diagnostics for applications and infrastructure running on Google Cloud. It encompasses Cloud Monitoring, Cloud Logging, Cloud Trace, Cloud Profiler, and Error Reporting to deliver comprehensive observability, real-time visibility, alerting, log analysis, distributed tracing, and performance profiling across cloud environments.
 
-## APIs
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-operations-suite/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-operations-suite/refs/heads/main/apis.yml)
 
-- [Google Cloud Operations Suite API](https://cloud.google.com/products/operations) - The Operations Suite API provides a unified interface for managing observability across Google Cloud services, integrating monitoring, logging, tracing, profiling, and error reporting.
+## Scope
 
-## Artifacts
+- **Type:** Index
 
-- [APIs.yml](apis.yml) - The APIs.yml index for this API.
-- [OpenAPI](openapi/openapi.yml) - The OpenAPI specification for the Operations Suite API.
-- [JSON Schema](json-schema/json-schema.yml) - The JSON Schema for Operations Suite resources.
-- [JSON-LD Context](json-ld/json-ld.yml) - The JSON-LD context mapping for Operations Suite resources.
+## Tags
 
-## Common
-
-- [Getting Started](https://cloud.google.com/monitoring/docs/quickstart)
-- [Pricing](https://cloud.google.com/stackdriver/pricing)
+- Error Reporting
+- Google Cloud
+- Logging
+- Monitoring
+- Observability
+- Operations
+- Profiling
+- Stackdriver
+- Tracing
 
 ## Timestamps
 
-- Created: 2026-03-13
-- Modified: 2026-04-28
+- **Created:** 2026-03-13
+- **Modified:** 2026-05-19
+
+## APIs
+
+### Google Cloud Operations Suite API
+
+The Operations Suite API provides a unified interface for managing observability across Google Cloud services, including monitoring metrics and dashboards, centralized logging, distributed tracing, continuous profiling, and automated error reporting. It integrates the capabilities of Cloud Monitoring, Cloud Logging, Cloud Trace, Cloud Profiler, and Error Reporting into a cohesive operations platform.
+
+- **Human URL:** [https://cloud.google.com/products/operations](https://cloud.google.com/products/operations)
+- **Base URL:** `https://monitoring.googleapis.com`
+
+#### Properties
+
+- [Documentation](https://cloud.google.com/monitoring/docs/reference/v3/rest)
+- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Authentication](https://cloud.google.com/docs/authentication)
+- [Getting Started](https://cloud.google.com/monitoring/docs/quickstart)
+- [JSON Schema](json-schema/json-schema.yml) — [JSON Schema](https://json-schema.org/specification)
+- [J S O N L D Context](json-ld/json-ld.yml)
+
+## Common Properties
+
+- [GitHub Organization](https://github.com/GoogleCloudPlatform)
+- [Portal](https://cloud.google.com/products/operations)
+- [Getting Started](https://cloud.google.com/monitoring/docs/quickstart)
+- [Documentation](https://cloud.google.com/products/operations)
+- [Authentication](https://cloud.google.com/docs/authentication)
+- [Pricing](https://cloud.google.com/stackdriver/pricing)
+- [Terms of Service](https://cloud.google.com/terms)
+- [Privacy Policy](https://policies.google.com/privacy)
+- [Status Page](https://status.cloud.google.com/)
+- [Support](https://cloud.google.com/support)
+- [J S O N L D Context](json-ld/json-ld.yml)
+- [Integrations](https://cloud.google.com/marketplace)
 
 ## Maintainers
 
-- [Kin Lane](mailto:kin@apievangelist.com)
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
