@@ -1,0 +1,217 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Operations Suite API",
+    "version": "v3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite List Time Series",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://monitoring.googleapis.com/v3/projects/:projectId/timeSeries",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "interval.startTime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "interval.endTime",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists time series that match a filter for monitoring data."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite Create Time Series",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitoring.googleapis.com/v3/projects/:projectId/timeSeries",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or adds data to one or more time series."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite List Alert Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://monitoring.googleapis.com/v3/projects/:projectId/alertPolicies",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists the existing alerting policies for the project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite Create Alert Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitoring.googleapis.com/v3/projects/:projectId/alertPolicies",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new alerting policy."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite List Dashboards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://monitoring.googleapis.com/v1/projects/:projectId/dashboards",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists the existing dashboards for the project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite Create Dashboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitoring.googleapis.com/v1/projects/:projectId/dashboards",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new custom dashboard."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite List Uptime Check Configs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://monitoring.googleapis.com/v3/projects/:projectId/uptimeCheckConfigs",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists the existing uptime check configurations."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Entries:list",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite List Log Entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitoring.googleapis.com/v2/entries:list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Lists log entries from Cloud Logging."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Entries:write",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite Write Log Entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitoring.googleapis.com/v2/entries:write",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Writes log entries to Cloud Logging."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

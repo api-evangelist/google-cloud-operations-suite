@@ -1,0 +1,968 @@
+{
+  "item": [
+    {
+      "id": "c110320c-3bc7-4072-9ec3-af8fc356d0b0",
+      "name": "Entries:list",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a5bfed4e-81f0-42f2-ba2e-6affb2736f13",
+          "name": "Google Cloud Operations Suite List Log Entries",
+          "request": {
+            "name": "Google Cloud Operations Suite List Log Entries",
+            "description": {
+              "content": "Lists log entries from Cloud Logging.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v2",
+                "entries:list"
+              ],
+              "host": [
+                "logging",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"resourceNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filter\": \"<string>\",\n  \"orderBy\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "076cd39c-7d41-428c-85d6-2e25f3c34423",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v2",
+                    "entries:list"
+                  ],
+                  "host": [
+                    "logging",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filter\": \"<string>\",\n  \"orderBy\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"logName\": \"string\",\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"timestamp\": \"1973-09-21T19:12:09.352Z\",\n      \"severity\": \"DEFAULT\",\n      \"textPayload\": \"string\",\n      \"jsonPayload\": {},\n      \"insertId\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    },\n    {\n      \"logName\": \"string\",\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"timestamp\": \"1950-10-12T13:19:32.277Z\",\n      \"severity\": \"DEBUG\",\n      \"textPayload\": \"string\",\n      \"jsonPayload\": {},\n      \"insertId\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8ed09bfa-dc93-453f-97e7-8323c7e312ca",
+      "name": "Entries:write",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f950c462-acf0-4a2f-ba50-791823c54a5a",
+          "name": "Google Cloud Operations Suite Write Log Entries",
+          "request": {
+            "name": "Google Cloud Operations Suite Write Log Entries",
+            "description": {
+              "content": "Writes log entries to Cloud Logging.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v2",
+                "entries:write"
+              ],
+              "host": [
+                "logging",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"logName\": \"<string>\",\n  \"resource\": {\n    \"type\": \"<string>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"entries\": [\n    {\n      \"logName\": \"<string>\",\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"key_0\": \"<string>\"\n        }\n      },\n      \"timestamp\": \"<dateTime>\",\n      \"severity\": \"<string>\",\n      \"textPayload\": \"<string>\",\n      \"jsonPayload\": \"<object>\",\n      \"insertId\": \"<string>\",\n      \"labels\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    {\n      \"logName\": \"<string>\",\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"key_0\": \"<string>\"\n        }\n      },\n      \"timestamp\": \"<dateTime>\",\n      \"severity\": \"<string>\",\n      \"textPayload\": \"<string>\",\n      \"jsonPayload\": \"<object>\",\n      \"insertId\": \"<string>\",\n      \"labels\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\",\n        \"key_4\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8ace984c-b953-4a8d-8044-6ca3a03d1490",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v2",
+                    "entries:write"
+                  ],
+                  "host": [
+                    "logging",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logName\": \"<string>\",\n  \"resource\": {\n    \"type\": \"<string>\",\n    \"labels\": {\n      \"key_0\": \"<string>\"\n    }\n  },\n  \"entries\": [\n    {\n      \"logName\": \"string\",\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\"\n        }\n      },\n      \"timestamp\": \"1961-07-20T17:15:54.575Z\",\n      \"severity\": \"NOTICE\",\n      \"textPayload\": \"string\",\n      \"jsonPayload\": {},\n      \"insertId\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\"\n      }\n    },\n    {\n      \"logName\": \"string\",\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"timestamp\": \"2017-12-21T03:47:06.733Z\",\n      \"severity\": \"WARNING\",\n      \"textPayload\": \"string\",\n      \"jsonPayload\": {},\n      \"insertId\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6dc91fd5-af40-4523-b5e2-20cb76e05222",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "da5979c9-c1a5-4831-8bc8-42882588bf06",
+          "name": "Google Cloud Operations Suite List Time Series",
+          "request": {
+            "name": "Google Cloud Operations Suite List Time Series",
+            "description": {
+              "content": "Lists time series that match a filter for monitoring data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "projects",
+                ":projectId",
+                "timeSeries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "interval.startTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "interval.endTime",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "180b5f59-54a9-4f64-8018-069ed19f7ed5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "projects",
+                    ":projectId",
+                    "timeSeries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "interval.startTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "interval.endTime",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timeSeries\": [\n    {\n      \"metric\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"metricKind\": \"string\",\n      \"valueType\": \"string\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"1969-07-11T20:50:47.633Z\",\n            \"endTime\": \"1977-06-06T22:51:02.309Z\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"1980-03-07T22:50:09.912Z\",\n            \"endTime\": \"1980-02-18T03:01:45.629Z\"\n          },\n          \"value\": {}\n        }\n      ]\n    },\n    {\n      \"metric\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"metricKind\": \"string\",\n      \"valueType\": \"string\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"2021-09-04T01:58:25.991Z\",\n            \"endTime\": \"2005-10-25T06:46:23.733Z\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"1962-01-11T10:54:36.716Z\",\n            \"endTime\": \"1988-08-04T05:34:50.467Z\"\n          },\n          \"value\": {}\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ca42fc3-818c-485c-869c-37e017de6003",
+          "name": "Google Cloud Operations Suite Create Time Series",
+          "request": {
+            "name": "Google Cloud Operations Suite Create Time Series",
+            "description": {
+              "content": "Creates or adds data to one or more time series.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "projects",
+                ":projectId",
+                "timeSeries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"timeSeries\": [\n    {\n      \"metric\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"key_0\": \"<string>\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"key_0\": \"<string>\"\n        }\n      },\n      \"metricKind\": \"<string>\",\n      \"valueType\": \"<string>\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": \"<object>\"\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": \"<object>\"\n        }\n      ]\n    },\n    {\n      \"metric\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"key_0\": \"<string>\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"key_0\": \"<string>\"\n        }\n      },\n      \"metricKind\": \"<string>\",\n      \"valueType\": \"<string>\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": \"<object>\"\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": \"<object>\"\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d5da894-c8f6-4664-963d-37a5399dd755",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "projects",
+                    ":projectId",
+                    "timeSeries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"timeSeries\": [\n    {\n      \"metric\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"metricKind\": \"string\",\n      \"valueType\": \"string\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"1963-08-09T08:33:40.618Z\",\n            \"endTime\": \"1952-07-19T09:24:58.045Z\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"1961-01-25T05:51:55.443Z\",\n            \"endTime\": \"1964-04-02T03:26:26.116Z\"\n          },\n          \"value\": {}\n        }\n      ]\n    },\n    {\n      \"metric\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"metricKind\": \"string\",\n      \"valueType\": \"string\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"2016-02-06T00:07:30.058Z\",\n            \"endTime\": \"2006-01-21T03:11:46.896Z\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"1949-10-23T23:32:49.640Z\",\n            \"endTime\": \"2012-12-01T00:34:15.497Z\"\n          },\n          \"value\": {}\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71e453c2-e95f-4bec-917b-9fe466e37149",
+          "name": "Google Cloud Operations Suite List Alert Policies",
+          "request": {
+            "name": "Google Cloud Operations Suite List Alert Policies",
+            "description": {
+              "content": "Lists the existing alerting policies for the project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "projects",
+                ":projectId",
+                "alertPolicies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "01fa6630-df14-4a72-bc7c-b419b4b198ed",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "projects",
+                    ":projectId",
+                    "alertPolicies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"alertPolicies\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"combiner\": \"string\",\n      \"enabled\": false,\n      \"notificationChannels\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"combiner\": \"string\",\n      \"enabled\": true,\n      \"notificationChannels\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61efd976-0d91-4053-9807-af4774e282aa",
+          "name": "Google Cloud Operations Suite Create Alert Policy",
+          "request": {
+            "name": "Google Cloud Operations Suite Create Alert Policy",
+            "description": {
+              "content": "Creates a new alerting policy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "projects",
+                ":projectId",
+                "alertPolicies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"conditions\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"combiner\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"notificationChannels\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0b1e358f-ec80-46d8-a5ab-8f35c4228038",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "projects",
+                    ":projectId",
+                    "alertPolicies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"conditions\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"combiner\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"notificationChannels\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"combiner\": \"string\",\n  \"enabled\": true,\n  \"notificationChannels\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3393639a-3eb4-4183-975f-0aae66b6f036",
+          "name": "Google Cloud Operations Suite List Dashboards",
+          "request": {
+            "name": "Google Cloud Operations Suite List Dashboards",
+            "description": {
+              "content": "Lists the existing dashboards for the project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "projects",
+                ":projectId",
+                "dashboards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbca08a6-449b-41cb-b8b7-5ba2b38700e7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "projects",
+                    ":projectId",
+                    "dashboards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"dashboards\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"gridLayout\": {},\n      \"mosaicLayout\": {},\n      \"rowLayout\": {},\n      \"columnLayout\": {}\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"gridLayout\": {},\n      \"mosaicLayout\": {},\n      \"rowLayout\": {},\n      \"columnLayout\": {}\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6194d249-4d29-40b4-b53a-7de4ecc1ddfa",
+          "name": "Google Cloud Operations Suite Create Dashboard",
+          "request": {
+            "name": "Google Cloud Operations Suite Create Dashboard",
+            "description": {
+              "content": "Creates a new custom dashboard.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "projects",
+                ":projectId",
+                "dashboards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"gridLayout\": \"<object>\",\n  \"mosaicLayout\": \"<object>\",\n  \"rowLayout\": \"<object>\",\n  \"columnLayout\": \"<object>\",\n  \"dashboardFilters\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2d340302-47e9-468a-a079-fe8d18596e11",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "projects",
+                    ":projectId",
+                    "dashboards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"gridLayout\": \"<object>\",\n  \"mosaicLayout\": \"<object>\",\n  \"rowLayout\": \"<object>\",\n  \"columnLayout\": \"<object>\",\n  \"dashboardFilters\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"gridLayout\": {},\n  \"mosaicLayout\": {},\n  \"rowLayout\": {},\n  \"columnLayout\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05c28de0-b413-489c-ad13-19745d0720f9",
+          "name": "Google Cloud Operations Suite List Uptime Check Configs",
+          "request": {
+            "name": "Google Cloud Operations Suite List Uptime Check Configs",
+            "description": {
+              "content": "Lists the existing uptime check configurations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "projects",
+                ":projectId",
+                "uptimeCheckConfigs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ea9bc8d-1baf-463b-b1c1-13d35477f0c1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "projects",
+                    ":projectId",
+                    "uptimeCheckConfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uptimeCheckConfigs\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"period\": \"string\",\n      \"timeout\": \"string\",\n      \"httpCheck\": {\n        \"path\": \"string\",\n        \"port\": 1882,\n        \"useSsl\": true\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"period\": \"string\",\n      \"timeout\": \"string\",\n      \"httpCheck\": {\n        \"path\": \"string\",\n        \"port\": 6683,\n        \"useSsl\": false\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://monitoring.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a38700ef-e2ce-4d43-9562-2b0bbf09939d",
+    "name": "Google Cloud Operations Suite API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Operations Suite API provides a unified interface for managing observability across Google Cloud services. This specification covers the core monitoring and logging capabilities including time series metrics, alert policies, log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
