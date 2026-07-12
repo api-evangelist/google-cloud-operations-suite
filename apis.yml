@@ -44,6 +44,10 @@ apis:
       - type: JSONLDContext
         url: json-ld/json-ld.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-operations-suite-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-operations-suite-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
