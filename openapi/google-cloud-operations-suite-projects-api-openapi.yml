@@ -1,0 +1,332 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Operations Suite Entries:list Projects API
+  description: The Operations Suite API provides a unified interface for managing observability across Google Cloud services. This specification covers the core monitoring and logging capabilities including time series metrics, alert policies, log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.
+  version: v3
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/products/operations
+servers:
+- url: https://monitoring.googleapis.com
+  description: Cloud Monitoring API
+- url: https://logging.googleapis.com
+  description: Cloud Logging API
+tags:
+- name: Projects
+paths:
+  /v3/projects/{projectId}/timeSeries:
+    get:
+      operationId: listTimeSeries
+      summary: Google Cloud Operations Suite List Time Series
+      description: Lists time series that match a filter for monitoring data.
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+      - name: interval.startTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: interval.endTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTimeSeriesResponse'
+      tags:
+      - Projects
+    post:
+      operationId: createTimeSeries
+      summary: Google Cloud Operations Suite Create Time Series
+      description: Creates or adds data to one or more time series.
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTimeSeriesRequest'
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - Projects
+  /v3/projects/{projectId}/alertPolicies:
+    get:
+      operationId: listAlertPolicies
+      summary: Google Cloud Operations Suite List Alert Policies
+      description: Lists the existing alerting policies for the project.
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAlertPoliciesResponse'
+      tags:
+      - Projects
+    post:
+      operationId: createAlertPolicy
+      summary: Google Cloud Operations Suite Create Alert Policy
+      description: Creates a new alerting policy.
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlertPolicy'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertPolicy'
+      tags:
+      - Projects
+  /v1/projects/{projectId}/dashboards:
+    get:
+      operationId: listDashboards
+      summary: Google Cloud Operations Suite List Dashboards
+      description: Lists the existing dashboards for the project.
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDashboardsResponse'
+      tags:
+      - Projects
+    post:
+      operationId: createDashboard
+      summary: Google Cloud Operations Suite Create Dashboard
+      description: Creates a new custom dashboard.
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dashboard'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard'
+      tags:
+      - Projects
+  /v3/projects/{projectId}/uptimeCheckConfigs:
+    get:
+      operationId: listUptimeCheckConfigs
+      summary: Google Cloud Operations Suite List Uptime Check Configs
+      description: Lists the existing uptime check configurations.
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUptimeCheckConfigsResponse'
+      tags:
+      - Projects
+components:
+  schemas:
+    UptimeCheckConfig:
+      type: object
+      description: Configuration for an uptime check.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        period:
+          type: string
+        timeout:
+          type: string
+        httpCheck:
+          type: object
+          properties:
+            path:
+              type: string
+            port:
+              type: integer
+            useSsl:
+              type: boolean
+    AlertPolicy:
+      type: object
+      description: A policy for generating alerts.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        conditions:
+          type: array
+          items:
+            type: object
+        combiner:
+          type: string
+        enabled:
+          type: boolean
+        notificationChannels:
+          type: array
+          items:
+            type: string
+    ListTimeSeriesResponse:
+      type: object
+      properties:
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSeries'
+        nextPageToken:
+          type: string
+    Dashboard:
+      type: object
+      description: A Cloud Monitoring dashboard.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        gridLayout:
+          type: object
+        mosaicLayout:
+          type: object
+        rowLayout:
+          type: object
+        columnLayout:
+          type: object
+        dashboardFilters:
+          type: array
+          items:
+            type: object
+    ListDashboardsResponse:
+      type: object
+      properties:
+        dashboards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dashboard'
+        nextPageToken:
+          type: string
+    ListAlertPoliciesResponse:
+      type: object
+      properties:
+        alertPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertPolicy'
+        nextPageToken:
+          type: string
+    CreateTimeSeriesRequest:
+      type: object
+      properties:
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSeries'
+    TimeSeries:
+      type: object
+      description: A collection of data points for a metric.
+      properties:
+        metric:
+          type: object
+          properties:
+            type:
+              type: string
+            labels:
+              type: object
+              additionalProperties:
+                type: string
+        resource:
+          type: object
+          properties:
+            type:
+              type: string
+            labels:
+              type: object
+              additionalProperties:
+                type: string
+        metricKind:
+          type: string
+        valueType:
+          type: string
+        points:
+          type: array
+          items:
+            type: object
+            properties:
+              interval:
+                type: object
+                properties:
+                  startTime:
+                    type: string
+                    format: date-time
+                  endTime:
+                    type: string
+                    format: date-time
+              value:
+                type: object
+    ListUptimeCheckConfigsResponse:
+      type: object
+      properties:
+        uptimeCheckConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/UptimeCheckConfig'
+        nextPageToken:
+          type: string
+externalDocs:
+  description: Google Cloud Operations Suite Documentation
+  url: https://cloud.google.com/products/operations

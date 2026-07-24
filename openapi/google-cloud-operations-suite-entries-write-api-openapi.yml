@@ -1,0 +1,95 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Operations Suite Entries:list Entries:write API
+  description: The Operations Suite API provides a unified interface for managing observability across Google Cloud services. This specification covers the core monitoring and logging capabilities including time series metrics, alert policies, log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.
+  version: v3
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/products/operations
+servers:
+- url: https://monitoring.googleapis.com
+  description: Cloud Monitoring API
+- url: https://logging.googleapis.com
+  description: Cloud Logging API
+tags:
+- name: Entries:write
+paths:
+  /v2/entries:write:
+    post:
+      operationId: writeLogEntries
+      summary: Google Cloud Operations Suite Write Log Entries
+      description: Writes log entries to Cloud Logging.
+      servers:
+      - url: https://logging.googleapis.com
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                logName:
+                  type: string
+                resource:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    labels:
+                      type: object
+                      additionalProperties:
+                        type: string
+                entries:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/LogEntry'
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - Entries:write
+components:
+  schemas:
+    LogEntry:
+      type: object
+      description: An individual entry in a log.
+      properties:
+        logName:
+          type: string
+        resource:
+          type: object
+          properties:
+            type:
+              type: string
+            labels:
+              type: object
+              additionalProperties:
+                type: string
+        timestamp:
+          type: string
+          format: date-time
+        severity:
+          type: string
+          enum:
+          - DEFAULT
+          - DEBUG
+          - INFO
+          - NOTICE
+          - WARNING
+          - ERROR
+          - CRITICAL
+          - ALERT
+          - EMERGENCY
+        textPayload:
+          type: string
+        jsonPayload:
+          type: object
+        insertId:
+          type: string
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+externalDocs:
+  description: Google Cloud Operations Suite Documentation
+  url: https://cloud.google.com/products/operations
