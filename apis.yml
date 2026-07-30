@@ -5,7 +5,19 @@ description: >-
   applications and infrastructure running on Google Cloud. It encompasses Cloud Monitoring, Cloud Logging, Cloud Trace,
   Cloud Profiler, and Error Reporting to deliver comprehensive observability, real-time visibility, alerting, log
   analysis, distributed tracing, and performance profiling across cloud environments.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-operations-suite.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-operations-suite/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -22,28 +34,71 @@ tags:
   - Stackdriver
   - Tracing
 apis:
-  - name: Google Cloud Operations Suite API
-    description: >-
-      The Operations Suite API provides a unified interface for managing observability across Google Cloud services,
-      including monitoring metrics and dashboards, centralized logging, distributed tracing, continuous profiling, and
-      automated error reporting. It integrates the capabilities of Cloud Monitoring, Cloud Logging, Cloud Trace, Cloud
-      Profiler, and Error Reporting into a cohesive operations platform.
-    humanURL: https://cloud.google.com/products/operations
-    baseURL: https://monitoring.googleapis.com
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/monitoring/docs/reference/v3/rest
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/monitoring/docs/quickstart
-      - type: JSONSchema
-        url: json-schema/json-schema.yml
-      - type: JSONLDContext
-        url: json-ld/json-ld.yml
+- aid: google-cloud-operations-suite:google-cloud-operations-suite-entries-list-api
+  name: Google Cloud Operations Suite Entries:list API
+  description: >-
+    The Entries:list API from Google Cloud Operations Suite — 1 operation(s) for entries:list.
+  humanURL: https://cloud.google.com/products/operations
+  baseURL: https://monitoring.googleapis.com
+  tags:
+  - Entries:list
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-operations-suite-entries-list-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/monitoring/docs/reference/v3/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/monitoring/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
+- aid: google-cloud-operations-suite:google-cloud-operations-suite-entries-write-api
+  name: Google Cloud Operations Suite Entries:write API
+  description: >-
+    The Entries:write API from Google Cloud Operations Suite — 1 operation(s) for entries:write.
+  humanURL: https://cloud.google.com/products/operations
+  baseURL: https://monitoring.googleapis.com
+  tags:
+  - Entries:write
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-operations-suite-entries-write-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/monitoring/docs/reference/v3/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/monitoring/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
+- aid: google-cloud-operations-suite:google-cloud-operations-suite-projects-api
+  name: Google Cloud Operations Suite Projects API
+  description: The Projects API from Google Cloud Operations Suite — 4 operation(s) for projects.
+  humanURL: https://cloud.google.com/products/operations
+  baseURL: https://monitoring.googleapis.com
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-operations-suite-projects-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/monitoring/docs/reference/v3/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/monitoring/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-operations-suite/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-operations-suite-agentic-access.yml
   - type: VulnerabilityDisclosure
