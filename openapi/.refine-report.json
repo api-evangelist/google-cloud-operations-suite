@@ -1,0 +1,18 @@
+{
+  "provider": "google-cloud-operations-suite",
+  "sources": [
+    "google-cloud-operations-suite-entries-list-api-openapi.yml",
+    "google-cloud-operations-suite-entries-write-api-openapi.yml",
+    "google-cloud-operations-suite-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-operations-suite-entries-list-api-openapi.yml",
+    "google-cloud-operations-suite-entries-write-api-openapi.yml",
+    "google-cloud-operations-suite-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

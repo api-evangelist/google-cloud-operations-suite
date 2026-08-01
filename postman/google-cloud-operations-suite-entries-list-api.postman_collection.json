@@ -1,0 +1,142 @@
+{
+  "info": {
+    "_postman_id": "6193f348-961a-4f9f-9062-7f63b567a44c",
+    "name": "Google Cloud Operations Suite Entries:list API",
+    "description": "The Operations Suite API provides a unified interface for managing observability across Google Cloud services. This specification covers the core monitoring and logging capabilities including time series metrics, alert policies, log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:10.000Z",
+    "updatedAt": "2026-07-28T01:48:10.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6193f348-961a-4f9f-9062-7f63b567a44c"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "entries:list",
+          "item": [
+            {
+              "name": "Google Cloud Operations Suite List Log Entries",
+              "id": "550c4173-85e7-4277-bdb3-fd62dce7ce89",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filter\": \"<string>\",\n  \"orderBy\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://logging.googleapis.com/v2/entries:list",
+                  "protocol": "https",
+                  "host": [
+                    "logging",
+                    "googleapis",
+                    "com"
+                  ],
+                  "path": [
+                    "v2",
+                    "entries:list"
+                  ]
+                },
+                "description": "Lists log entries from Cloud Logging."
+              },
+              "response": [
+                {
+                  "id": "14d46d52-c0ba-424c-9b79-d4c41060dc1d",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"resourceNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filter\": \"<string>\",\n  \"orderBy\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://logging.googleapis.com/v2/entries:list",
+                      "protocol": "https",
+                      "host": [
+                        "logging",
+                        "googleapis",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "entries:list"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"entries\": [\n    {\n      \"logName\": \"<string>\",\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"laborisda7\": \"<string>\",\n          \"in_4\": \"<string>\"\n        }\n      },\n      \"timestamp\": \"<dateTime>\",\n      \"severity\": \"ERROR\",\n      \"textPayload\": \"<string>\",\n      \"jsonPayload\": {},\n      \"insertId\": \"<string>\",\n      \"labels\": {\n        \"Excepteur__\": \"<string>\",\n        \"elit71d\": \"<string>\",\n        \"animd5\": \"<string>\"\n      }\n    },\n    {\n      \"logName\": \"<string>\",\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"culpafd\": \"<string>\",\n          \"id_57_\": \"<string>\"\n        }\n      },\n      \"timestamp\": \"<dateTime>\",\n      \"severity\": \"DEFAULT\",\n      \"textPayload\": \"<string>\",\n      \"jsonPayload\": {},\n      \"insertId\": \"<string>\",\n      \"labels\": {\n        \"dolore01\": \"<string>\",\n        \"proident7\": \"<string>\",\n        \"cupidatat_873\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:48:10.000Z",
+                  "updatedAt": "2026-07-28T01:48:10.000Z",
+                  "uid": "35240-14d46d52-c0ba-424c-9b79-d4c41060dc1d"
+                }
+              ],
+              "createdAt": "2026-07-28T01:48:10.000Z",
+              "updatedAt": "2026-07-28T01:48:10.000Z",
+              "uid": "35240-550c4173-85e7-4277-bdb3-fd62dce7ce89"
+            }
+          ],
+          "id": "5a7a8423-bdb6-490a-ab9b-693cc0dd54d9",
+          "createdAt": "2026-07-28T01:48:10.000Z",
+          "updatedAt": "2026-07-28T01:48:10.000Z",
+          "uid": "35240-5a7a8423-bdb6-490a-ab9b-693cc0dd54d9"
+        }
+      ],
+      "id": "1a656742-6ace-4e92-b822-794b6a02963a",
+      "createdAt": "2026-07-28T01:48:10.000Z",
+      "updatedAt": "2026-07-28T01:48:10.000Z",
+      "uid": "35240-1a656742-6ace-4e92-b822-794b6a02963a"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://monitoring.googleapis.com"
+    }
+  ]
+}

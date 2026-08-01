@@ -1,0 +1,818 @@
+{
+  "info": {
+    "_postman_id": "908f164c-6ed7-440e-ab35-dcd39c9cc1bc",
+    "name": "Google Cloud Operations Suite Entries:list Projects API",
+    "description": "The Operations Suite API provides a unified interface for managing observability across Google Cloud services. This specification covers the core monitoring and logging capabilities including time series metrics, alert policies, log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:11.000Z",
+    "updatedAt": "2026-07-28T01:48:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-908f164c-6ed7-440e-ab35-dcd39c9cc1bc"
+  },
+  "item": [
+    {
+      "name": "v3",
+      "item": [
+        {
+          "name": "projects",
+          "item": [
+            {
+              "name": "{projectId}",
+              "item": [
+                {
+                  "name": "timeSeries",
+                  "item": [
+                    {
+                      "name": "Google Cloud Operations Suite List Time Series",
+                      "id": "03bdbfb2-e445-4432-8ee1-7e7c4bf6e0cb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v3/projects/:projectId/timeSeries?filter=<string>&interval.startTime=<dateTime>&interval.endTime=<dateTime>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v3",
+                            "projects",
+                            ":projectId",
+                            "timeSeries"
+                          ],
+                          "query": [
+                            {
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "interval.startTime",
+                              "value": "<dateTime>"
+                            },
+                            {
+                              "key": "interval.endTime",
+                              "value": "<dateTime>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "feb6ffa6-93e1-45b0-a819-556f3e8927a6",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Lists time series that match a filter for monitoring data."
+                      },
+                      "response": [
+                        {
+                          "id": "33e1ca97-00ca-4748-8010-22b266f7f3bc",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v3/projects/:projectId/timeSeries?filter=<string>&interval.startTime=<dateTime>&interval.endTime=<dateTime>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v3",
+                                "projects",
+                                ":projectId",
+                                "timeSeries"
+                              ],
+                              "query": [
+                                {
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "interval.startTime",
+                                  "value": "<dateTime>"
+                                },
+                                {
+                                  "key": "interval.endTime",
+                                  "value": "<dateTime>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"timeSeries\": [\n    {\n      \"metric\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"ullamcof\": \"<string>\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"anim6\": \"<string>\",\n          \"cupidatat_df6\": \"<string>\"\n        }\n      },\n      \"metricKind\": \"<string>\",\n      \"valueType\": \"<string>\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        }\n      ]\n    },\n    {\n      \"metric\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"iruref\": \"<string>\",\n          \"ad14\": \"<string>\",\n          \"Duis488\": \"<string>\",\n          \"proidentc\": \"<string>\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"veniam_26\": \"<string>\"\n        }\n      },\n      \"metricKind\": \"<string>\",\n      \"valueType\": \"<string>\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:48:12.000Z",
+                          "updatedAt": "2026-07-28T01:48:12.000Z",
+                          "uid": "35240-33e1ca97-00ca-4748-8010-22b266f7f3bc"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:12.000Z",
+                      "updatedAt": "2026-07-28T01:48:12.000Z",
+                      "uid": "35240-03bdbfb2-e445-4432-8ee1-7e7c4bf6e0cb"
+                    },
+                    {
+                      "name": "Google Cloud Operations Suite Create Time Series",
+                      "id": "8c8cabf7-9c85-4947-80b3-9e4a58fb398b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"timeSeries\": [\n    {\n      \"metric\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"estcbc\": \"<string>\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"ipsum__\": \"<string>\"\n        }\n      },\n      \"metricKind\": \"<string>\",\n      \"valueType\": \"<string>\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        }\n      ]\n    },\n    {\n      \"metric\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"id_40c\": \"<string>\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"dolore_e9\": \"<string>\"\n        }\n      },\n      \"metricKind\": \"<string>\",\n      \"valueType\": \"<string>\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        }\n      ]\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v3/projects/:projectId/timeSeries",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v3",
+                            "projects",
+                            ":projectId",
+                            "timeSeries"
+                          ],
+                          "variable": [
+                            {
+                              "id": "af76462f-96b3-4572-9749-cc84bdacc0c1",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates or adds data to one or more time series."
+                      },
+                      "response": [
+                        {
+                          "id": "64bf9bc2-ea38-44d2-b7b5-41f93d0fb24a",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"timeSeries\": [\n    {\n      \"metric\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"estcbc\": \"<string>\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"ipsum__\": \"<string>\"\n        }\n      },\n      \"metricKind\": \"<string>\",\n      \"valueType\": \"<string>\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        }\n      ]\n    },\n    {\n      \"metric\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"id_40c\": \"<string>\"\n        }\n      },\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"dolore_e9\": \"<string>\"\n        }\n      },\n      \"metricKind\": \"<string>\",\n      \"valueType\": \"<string>\",\n      \"points\": [\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        },\n        {\n          \"interval\": {\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\"\n          },\n          \"value\": {}\n        }\n      ]\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v3/projects/:projectId/timeSeries",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v3",
+                                "projects",
+                                ":projectId",
+                                "timeSeries"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:48:12.000Z",
+                          "updatedAt": "2026-07-28T01:48:12.000Z",
+                          "uid": "35240-64bf9bc2-ea38-44d2-b7b5-41f93d0fb24a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:12.000Z",
+                      "updatedAt": "2026-07-28T01:48:12.000Z",
+                      "uid": "35240-8c8cabf7-9c85-4947-80b3-9e4a58fb398b"
+                    }
+                  ],
+                  "id": "c0badc39-26e1-4f2c-891b-a55b948031c6",
+                  "createdAt": "2026-07-28T01:48:12.000Z",
+                  "updatedAt": "2026-07-28T01:48:12.000Z",
+                  "uid": "35240-c0badc39-26e1-4f2c-891b-a55b948031c6"
+                },
+                {
+                  "name": "alertPolicies",
+                  "item": [
+                    {
+                      "name": "Google Cloud Operations Suite List Alert Policies",
+                      "id": "0a60b85e-b876-4030-a786-375051770e6e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v3/projects/:projectId/alertPolicies",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v3",
+                            "projects",
+                            ":projectId",
+                            "alertPolicies"
+                          ],
+                          "variable": [
+                            {
+                              "id": "406201ce-806e-44a6-aa2d-9b0bd8b7cca3",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Lists the existing alerting policies for the project."
+                      },
+                      "response": [
+                        {
+                          "id": "abcce73e-f07c-435d-8573-dd40181e40bb",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v3/projects/:projectId/alertPolicies",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v3",
+                                "projects",
+                                ":projectId",
+                                "alertPolicies"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"alertPolicies\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"combiner\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"notificationChannels\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"combiner\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"notificationChannels\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:48:12.000Z",
+                          "updatedAt": "2026-07-28T01:48:12.000Z",
+                          "uid": "35240-abcce73e-f07c-435d-8573-dd40181e40bb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:12.000Z",
+                      "updatedAt": "2026-07-28T01:48:12.000Z",
+                      "uid": "35240-0a60b85e-b876-4030-a786-375051770e6e"
+                    },
+                    {
+                      "name": "Google Cloud Operations Suite Create Alert Policy",
+                      "id": "2e25be98-d58c-490b-b783-e7c70f751273",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"combiner\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"notificationChannels\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v3/projects/:projectId/alertPolicies",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v3",
+                            "projects",
+                            ":projectId",
+                            "alertPolicies"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f7689931-0391-4b13-997d-7b9f8e336759",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates a new alerting policy."
+                      },
+                      "response": [
+                        {
+                          "id": "fd03d5ed-a6a3-4945-a63e-97b6d65e125c",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"combiner\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"notificationChannels\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v3/projects/:projectId/alertPolicies",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v3",
+                                "projects",
+                                ":projectId",
+                                "alertPolicies"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"combiner\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"notificationChannels\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T01:48:12.000Z",
+                          "updatedAt": "2026-07-28T01:48:12.000Z",
+                          "uid": "35240-fd03d5ed-a6a3-4945-a63e-97b6d65e125c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:12.000Z",
+                      "updatedAt": "2026-07-28T01:48:12.000Z",
+                      "uid": "35240-2e25be98-d58c-490b-b783-e7c70f751273"
+                    }
+                  ],
+                  "id": "97e0ba5e-9bab-4e22-9d00-c196652ad032",
+                  "createdAt": "2026-07-28T01:48:12.000Z",
+                  "updatedAt": "2026-07-28T01:48:12.000Z",
+                  "uid": "35240-97e0ba5e-9bab-4e22-9d00-c196652ad032"
+                },
+                {
+                  "name": "uptimeCheckConfigs",
+                  "item": [
+                    {
+                      "name": "Google Cloud Operations Suite List Uptime Check Configs",
+                      "id": "dfb0cb2c-351f-4963-8c75-5d2b7b2a0b8e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v3/projects/:projectId/uptimeCheckConfigs",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v3",
+                            "projects",
+                            ":projectId",
+                            "uptimeCheckConfigs"
+                          ],
+                          "variable": [
+                            {
+                              "id": "bb7ea0ef-9587-4c2c-9200-311849800faf",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Lists the existing uptime check configurations."
+                      },
+                      "response": [
+                        {
+                          "id": "9c76a44f-3cac-4315-ba75-9700010d521f",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v3/projects/:projectId/uptimeCheckConfigs",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v3",
+                                "projects",
+                                ":projectId",
+                                "uptimeCheckConfigs"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"uptimeCheckConfigs\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"period\": \"<string>\",\n      \"timeout\": \"<string>\",\n      \"httpCheck\": {\n        \"path\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"useSsl\": \"<boolean>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"period\": \"<string>\",\n      \"timeout\": \"<string>\",\n      \"httpCheck\": {\n        \"path\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"useSsl\": \"<boolean>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:48:12.000Z",
+                          "updatedAt": "2026-07-28T01:48:12.000Z",
+                          "uid": "35240-9c76a44f-3cac-4315-ba75-9700010d521f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:12.000Z",
+                      "updatedAt": "2026-07-28T01:48:12.000Z",
+                      "uid": "35240-dfb0cb2c-351f-4963-8c75-5d2b7b2a0b8e"
+                    }
+                  ],
+                  "id": "c5b10455-7923-498f-9223-927923179464",
+                  "createdAt": "2026-07-28T01:48:12.000Z",
+                  "updatedAt": "2026-07-28T01:48:12.000Z",
+                  "uid": "35240-c5b10455-7923-498f-9223-927923179464"
+                }
+              ],
+              "id": "64bdc6f5-a749-47aa-abf8-9f432f4909de",
+              "createdAt": "2026-07-28T01:48:12.000Z",
+              "updatedAt": "2026-07-28T01:48:12.000Z",
+              "uid": "35240-64bdc6f5-a749-47aa-abf8-9f432f4909de"
+            }
+          ],
+          "id": "0024c5b5-09a1-47f0-b88c-1fa73fa9f6ee",
+          "createdAt": "2026-07-28T01:48:12.000Z",
+          "updatedAt": "2026-07-28T01:48:12.000Z",
+          "uid": "35240-0024c5b5-09a1-47f0-b88c-1fa73fa9f6ee"
+        }
+      ],
+      "id": "c3567d6c-94d8-4a5f-9446-d1817df6bdc0",
+      "createdAt": "2026-07-28T01:48:12.000Z",
+      "updatedAt": "2026-07-28T01:48:12.000Z",
+      "uid": "35240-c3567d6c-94d8-4a5f-9446-d1817df6bdc0"
+    },
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "projects",
+          "item": [
+            {
+              "name": "{projectId}",
+              "item": [
+                {
+                  "name": "dashboards",
+                  "item": [
+                    {
+                      "name": "Google Cloud Operations Suite List Dashboards",
+                      "id": "ae3c2435-6416-4ded-a851-0bea2f912f2d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/projects/:projectId/dashboards",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "projects",
+                            ":projectId",
+                            "dashboards"
+                          ],
+                          "variable": [
+                            {
+                              "id": "50097788-2af5-4b57-a0e2-dc317e8a0698",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Lists the existing dashboards for the project."
+                      },
+                      "response": [
+                        {
+                          "id": "07d77a02-0fce-4b73-b006-9c441fac553f",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/projects/:projectId/dashboards",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "projects",
+                                ":projectId",
+                                "dashboards"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"dashboards\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"gridLayout\": {},\n      \"mosaicLayout\": {},\n      \"rowLayout\": {},\n      \"columnLayout\": {}\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"gridLayout\": {},\n      \"mosaicLayout\": {},\n      \"rowLayout\": {},\n      \"columnLayout\": {}\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:48:12.000Z",
+                          "updatedAt": "2026-07-28T01:48:12.000Z",
+                          "uid": "35240-07d77a02-0fce-4b73-b006-9c441fac553f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:12.000Z",
+                      "updatedAt": "2026-07-28T01:48:12.000Z",
+                      "uid": "35240-ae3c2435-6416-4ded-a851-0bea2f912f2d"
+                    },
+                    {
+                      "name": "Google Cloud Operations Suite Create Dashboard",
+                      "id": "640e53cd-df13-4b32-8254-dd2c3fc4e4bf",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"gridLayout\": {},\n  \"mosaicLayout\": {},\n  \"rowLayout\": {},\n  \"columnLayout\": {}\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/projects/:projectId/dashboards",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "projects",
+                            ":projectId",
+                            "dashboards"
+                          ],
+                          "variable": [
+                            {
+                              "id": "21a363ff-dd74-4c1b-9964-7021c73bc9a1",
+                              "key": "projectId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Creates a new custom dashboard."
+                      },
+                      "response": [
+                        {
+                          "id": "bf7b53d3-f234-4209-b4d9-ffaafd6686df",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"gridLayout\": {},\n  \"mosaicLayout\": {},\n  \"rowLayout\": {},\n  \"columnLayout\": {}\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/projects/:projectId/dashboards",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "projects",
+                                ":projectId",
+                                "dashboards"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"gridLayout\": {},\n  \"mosaicLayout\": {},\n  \"rowLayout\": {},\n  \"columnLayout\": {}\n}",
+                          "createdAt": "2026-07-28T01:48:12.000Z",
+                          "updatedAt": "2026-07-28T01:48:12.000Z",
+                          "uid": "35240-bf7b53d3-f234-4209-b4d9-ffaafd6686df"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:12.000Z",
+                      "updatedAt": "2026-07-28T01:48:12.000Z",
+                      "uid": "35240-640e53cd-df13-4b32-8254-dd2c3fc4e4bf"
+                    }
+                  ],
+                  "id": "8a486ea6-8be3-4804-b4a7-60159338f9ce",
+                  "createdAt": "2026-07-28T01:48:12.000Z",
+                  "updatedAt": "2026-07-28T01:48:12.000Z",
+                  "uid": "35240-8a486ea6-8be3-4804-b4a7-60159338f9ce"
+                }
+              ],
+              "id": "5d09e428-c887-4be3-915d-754cb40e8b5b",
+              "createdAt": "2026-07-28T01:48:12.000Z",
+              "updatedAt": "2026-07-28T01:48:12.000Z",
+              "uid": "35240-5d09e428-c887-4be3-915d-754cb40e8b5b"
+            }
+          ],
+          "id": "b7481976-6a8a-4b4f-822b-8401bfbbbe73",
+          "createdAt": "2026-07-28T01:48:12.000Z",
+          "updatedAt": "2026-07-28T01:48:12.000Z",
+          "uid": "35240-b7481976-6a8a-4b4f-822b-8401bfbbbe73"
+        }
+      ],
+      "id": "c61e49d1-40e7-4b3a-b6be-84fa0405ccbf",
+      "createdAt": "2026-07-28T01:48:12.000Z",
+      "updatedAt": "2026-07-28T01:48:12.000Z",
+      "uid": "35240-c61e49d1-40e7-4b3a-b6be-84fa0405ccbf"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://monitoring.googleapis.com"
+    }
+  ]
+}
