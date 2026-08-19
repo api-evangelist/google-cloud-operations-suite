@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Operations Suite Entries:list Entries:write API",
+    "version": "v3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entries:write",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite Write Log Entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitoring.googleapis.com/v2/entries:write",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Writes log entries to Cloud Logging."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

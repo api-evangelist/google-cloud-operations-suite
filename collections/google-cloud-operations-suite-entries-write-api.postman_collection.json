@@ -1,0 +1,121 @@
+{
+  "item": [
+    {
+      "id": "ca89e793-f6f0-44cc-844f-dbcf811b5625",
+      "name": "Entries:write",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "83f62d7b-7010-40a3-bfad-edf2bf585f25",
+          "name": "Google Cloud Operations Suite Write Log Entries",
+          "request": {
+            "name": "Google Cloud Operations Suite Write Log Entries",
+            "description": {
+              "content": "Writes log entries to Cloud Logging.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v2",
+                "entries:write"
+              ],
+              "host": [
+                "logging",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"logName\": \"<string>\",\n  \"resource\": {\n    \"type\": \"<string>\",\n    \"labels\": {\n      \"key_0\": \"<string>\"\n    }\n  },\n  \"entries\": [\n    {\n      \"logName\": \"<string>\",\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        }\n      },\n      \"timestamp\": \"<dateTime>\",\n      \"severity\": \"<string>\",\n      \"textPayload\": \"<string>\",\n      \"jsonPayload\": \"<object>\",\n      \"insertId\": \"<string>\",\n      \"labels\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    },\n    {\n      \"logName\": \"<string>\",\n      \"resource\": {\n        \"type\": \"<string>\",\n        \"labels\": {\n          \"key_0\": \"<string>\"\n        }\n      },\n      \"timestamp\": \"<dateTime>\",\n      \"severity\": \"<string>\",\n      \"textPayload\": \"<string>\",\n      \"jsonPayload\": \"<object>\",\n      \"insertId\": \"<string>\",\n      \"labels\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a101835f-0f64-4e63-865a-d6ff912f77fb",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v2",
+                    "entries:write"
+                  ],
+                  "host": [
+                    "logging",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logName\": \"<string>\",\n  \"resource\": {\n    \"type\": \"<string>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"entries\": [\n    {\n      \"logName\": \"string\",\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"timestamp\": \"2004-09-02T02:27:07.319Z\",\n      \"severity\": \"EMERGENCY\",\n      \"textPayload\": \"string\",\n      \"jsonPayload\": {},\n      \"insertId\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    {\n      \"logName\": \"string\",\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"timestamp\": \"2013-02-10T23:03:35.043Z\",\n      \"severity\": \"NOTICE\",\n      \"textPayload\": \"string\",\n      \"jsonPayload\": {},\n      \"insertId\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://monitoring.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d7538882-623c-43c0-be93-53879f64bec5",
+    "name": "Google Cloud Operations Suite Entries:list Entries:write API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Operations Suite API provides a unified interface for managing observability across Google Cloud services. This specification covers the core monitoring and logging capabilities including time series metrics, alert policies, log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

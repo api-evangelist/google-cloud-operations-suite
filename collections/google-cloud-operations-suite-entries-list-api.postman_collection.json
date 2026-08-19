@@ -1,0 +1,131 @@
+{
+  "item": [
+    {
+      "id": "aa9914ab-f40d-4ec2-8bce-a654845e2a40",
+      "name": "Entries:list",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1c422100-06be-4689-ab9a-fa5a5b426baa",
+          "name": "Google Cloud Operations Suite List Log Entries",
+          "request": {
+            "name": "Google Cloud Operations Suite List Log Entries",
+            "description": {
+              "content": "Lists log entries from Cloud Logging.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v2",
+                "entries:list"
+              ],
+              "host": [
+                "logging",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"resourceNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filter\": \"<string>\",\n  \"orderBy\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3bd713d1-9323-4c83-a55e-9e1eb05f3cac",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v2",
+                    "entries:list"
+                  ],
+                  "host": [
+                    "logging",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"filter\": \"<string>\",\n  \"orderBy\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"logName\": \"string\",\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"timestamp\": \"1977-01-15T21:10:51.904Z\",\n      \"severity\": \"ALERT\",\n      \"textPayload\": \"string\",\n      \"jsonPayload\": {},\n      \"insertId\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    },\n    {\n      \"logName\": \"string\",\n      \"resource\": {\n        \"type\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\"\n        }\n      },\n      \"timestamp\": \"2000-10-15T07:03:34.894Z\",\n      \"severity\": \"WARNING\",\n      \"textPayload\": \"string\",\n      \"jsonPayload\": {},\n      \"insertId\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://monitoring.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ce468169-3869-4e93-98a7-12728057c9e1",
+    "name": "Google Cloud Operations Suite Entries:list API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Operations Suite API provides a unified interface for managing observability across Google Cloud services. This specification covers the core monitoring and logging capabilities including time series metrics, alert policies, log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Operations Suite Entries:list API",
+    "version": "v3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entries:list",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Operations Suite List Log Entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitoring.googleapis.com/v2/entries:list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Lists log entries from Cloud Logging."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
