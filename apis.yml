@@ -29,6 +29,15 @@ tags:
   - Logging
   - Monitoring
   - Observability
+  - Profiling
+  - Stackdriver
+  - Tracing
+tags_raw:
+  - Error Reporting
+  - Google Cloud
+  - Logging
+  - Monitoring
+  - Observability
   - Operations
   - Profiling
   - Stackdriver
@@ -82,6 +91,8 @@ apis:
   humanURL: https://cloud.google.com/products/operations
   baseURL: https://monitoring.googleapis.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
