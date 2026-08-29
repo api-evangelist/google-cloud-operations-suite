@@ -5,6 +5,18 @@ description: >-
   applications and infrastructure running on Google Cloud. It encompasses Cloud Monitoring, Cloud Logging, Cloud Trace,
   Cloud Profiler, and Error Reporting to deliver comprehensive observability, real-time visibility, alerting, log
   analysis, distributed tracing, and performance profiling across cloud environments.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
