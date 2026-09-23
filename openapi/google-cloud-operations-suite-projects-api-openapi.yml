@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Operations Suite Entries:list Projects API
+  title: Google Cloud Operations Suite Projects API
   description: The Operations Suite API provides a unified interface for managing observability across Google Cloud services. This specification covers the core monitoring and logging capabilities including time series metrics, alert policies, log entries, dashboards, and service monitoring that form the foundation of the Operations Suite.
   version: v3
   contact:
@@ -181,6 +181,110 @@ paths:
       - Projects
 components:
   schemas:
+    ListUptimeCheckConfigsResponse:
+      type: object
+      properties:
+        uptimeCheckConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/UptimeCheckConfig'
+        nextPageToken:
+          type: string
+    ListAlertPoliciesResponse:
+      type: object
+      properties:
+        alertPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertPolicy'
+        nextPageToken:
+          type: string
+    Dashboard:
+      type: object
+      description: A Cloud Monitoring dashboard.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        gridLayout:
+          type: object
+        mosaicLayout:
+          type: object
+        rowLayout:
+          type: object
+        columnLayout:
+          type: object
+        dashboardFilters:
+          type: array
+          items:
+            type: object
+    ListTimeSeriesResponse:
+      type: object
+      properties:
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSeries'
+        nextPageToken:
+          type: string
+    ListDashboardsResponse:
+      type: object
+      properties:
+        dashboards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dashboard'
+        nextPageToken:
+          type: string
+    UptimeCheckConfig:
+      type: object
+      description: Configuration for an uptime check.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        period:
+          type: string
+        timeout:
+          type: string
+        httpCheck:
+          type: object
+          properties:
+            path:
+              type: string
+            port:
+              type: integer
+            useSsl:
+              type: boolean
+    AlertPolicy:
+      type: object
+      description: A policy for generating alerts.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        conditions:
+          type: array
+          items:
+            type: object
+        combiner:
+          type: string
+        enabled:
+          type: boolean
+        notificationChannels:
+          type: array
+          items:
+            type: string
+    CreateTimeSeriesRequest:
+      type: object
+      properties:
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSeries'
     TimeSeries:
       type: object
       description: A collection of data points for a metric.
@@ -223,110 +327,6 @@ components:
                     format: date-time
               value:
                 type: object
-    ListUptimeCheckConfigsResponse:
-      type: object
-      properties:
-        uptimeCheckConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/UptimeCheckConfig'
-        nextPageToken:
-          type: string
-    ListDashboardsResponse:
-      type: object
-      properties:
-        dashboards:
-          type: array
-          items:
-            $ref: '#/components/schemas/Dashboard'
-        nextPageToken:
-          type: string
-    ListTimeSeriesResponse:
-      type: object
-      properties:
-        timeSeries:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeSeries'
-        nextPageToken:
-          type: string
-    AlertPolicy:
-      type: object
-      description: A policy for generating alerts.
-      properties:
-        name:
-          type: string
-        displayName:
-          type: string
-        conditions:
-          type: array
-          items:
-            type: object
-        combiner:
-          type: string
-        enabled:
-          type: boolean
-        notificationChannels:
-          type: array
-          items:
-            type: string
-    Dashboard:
-      type: object
-      description: A Cloud Monitoring dashboard.
-      properties:
-        name:
-          type: string
-        displayName:
-          type: string
-        gridLayout:
-          type: object
-        mosaicLayout:
-          type: object
-        rowLayout:
-          type: object
-        columnLayout:
-          type: object
-        dashboardFilters:
-          type: array
-          items:
-            type: object
-    UptimeCheckConfig:
-      type: object
-      description: Configuration for an uptime check.
-      properties:
-        name:
-          type: string
-        displayName:
-          type: string
-        period:
-          type: string
-        timeout:
-          type: string
-        httpCheck:
-          type: object
-          properties:
-            path:
-              type: string
-            port:
-              type: integer
-            useSsl:
-              type: boolean
-    ListAlertPoliciesResponse:
-      type: object
-      properties:
-        alertPolicies:
-          type: array
-          items:
-            $ref: '#/components/schemas/AlertPolicy'
-        nextPageToken:
-          type: string
-    CreateTimeSeriesRequest:
-      type: object
-      properties:
-        timeSeries:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeSeries'
 externalDocs:
   description: Google Cloud Operations Suite Documentation
   url: https://cloud.google.com/products/operations
