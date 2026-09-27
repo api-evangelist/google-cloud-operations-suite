@@ -181,15 +181,6 @@ paths:
       - Projects
 components:
   schemas:
-    ListUptimeCheckConfigsResponse:
-      type: object
-      properties:
-        uptimeCheckConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/UptimeCheckConfig'
-        nextPageToken:
-          type: string
     ListAlertPoliciesResponse:
       type: object
       properties:
@@ -197,35 +188,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AlertPolicy'
-        nextPageToken:
-          type: string
-    Dashboard:
-      type: object
-      description: A Cloud Monitoring dashboard.
-      properties:
-        name:
-          type: string
-        displayName:
-          type: string
-        gridLayout:
-          type: object
-        mosaicLayout:
-          type: object
-        rowLayout:
-          type: object
-        columnLayout:
-          type: object
-        dashboardFilters:
-          type: array
-          items:
-            type: object
-    ListTimeSeriesResponse:
-      type: object
-      properties:
-        timeSeries:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeSeries'
         nextPageToken:
           type: string
     ListDashboardsResponse:
@@ -237,27 +199,15 @@ components:
             $ref: '#/components/schemas/Dashboard'
         nextPageToken:
           type: string
-    UptimeCheckConfig:
+    ListTimeSeriesResponse:
       type: object
-      description: Configuration for an uptime check.
       properties:
-        name:
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSeries'
+        nextPageToken:
           type: string
-        displayName:
-          type: string
-        period:
-          type: string
-        timeout:
-          type: string
-        httpCheck:
-          type: object
-          properties:
-            path:
-              type: string
-            port:
-              type: integer
-            useSsl:
-              type: boolean
     AlertPolicy:
       type: object
       description: A policy for generating alerts.
@@ -278,13 +228,6 @@ components:
           type: array
           items:
             type: string
-    CreateTimeSeriesRequest:
-      type: object
-      properties:
-        timeSeries:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeSeries'
     TimeSeries:
       type: object
       description: A collection of data points for a metric.
@@ -327,6 +270,63 @@ components:
                     format: date-time
               value:
                 type: object
+    CreateTimeSeriesRequest:
+      type: object
+      properties:
+        timeSeries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSeries'
+    Dashboard:
+      type: object
+      description: A Cloud Monitoring dashboard.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        gridLayout:
+          type: object
+        mosaicLayout:
+          type: object
+        rowLayout:
+          type: object
+        columnLayout:
+          type: object
+        dashboardFilters:
+          type: array
+          items:
+            type: object
+    ListUptimeCheckConfigsResponse:
+      type: object
+      properties:
+        uptimeCheckConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/UptimeCheckConfig'
+        nextPageToken:
+          type: string
+    UptimeCheckConfig:
+      type: object
+      description: Configuration for an uptime check.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        period:
+          type: string
+        timeout:
+          type: string
+        httpCheck:
+          type: object
+          properties:
+            path:
+              type: string
+            port:
+              type: integer
+            useSsl:
+              type: boolean
 externalDocs:
   description: Google Cloud Operations Suite Documentation
   url: https://cloud.google.com/products/operations
