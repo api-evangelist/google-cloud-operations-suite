@@ -51,6 +51,15 @@ paths:
       - Entries:list
 components:
   schemas:
+    ListLogEntriesResponse:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/LogEntry'
+        nextPageToken:
+          type: string
     LogEntry:
       type: object
       description: An individual entry in a log.
@@ -91,15 +100,6 @@ components:
           type: object
           additionalProperties:
             type: string
-    ListLogEntriesResponse:
-      type: object
-      properties:
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/LogEntry'
-        nextPageToken:
-          type: string
 externalDocs:
   description: Google Cloud Operations Suite Documentation
   url: https://cloud.google.com/products/operations
