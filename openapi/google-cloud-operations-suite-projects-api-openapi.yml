@@ -181,85 +181,6 @@ paths:
       - Projects
 components:
   schemas:
-    ListUptimeCheckConfigsResponse:
-      type: object
-      properties:
-        uptimeCheckConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/UptimeCheckConfig'
-        nextPageToken:
-          type: string
-    ListAlertPoliciesResponse:
-      type: object
-      properties:
-        alertPolicies:
-          type: array
-          items:
-            $ref: '#/components/schemas/AlertPolicy'
-        nextPageToken:
-          type: string
-    AlertPolicy:
-      type: object
-      description: A policy for generating alerts.
-      properties:
-        name:
-          type: string
-        displayName:
-          type: string
-        conditions:
-          type: array
-          items:
-            type: object
-        combiner:
-          type: string
-        enabled:
-          type: boolean
-        notificationChannels:
-          type: array
-          items:
-            type: string
-    UptimeCheckConfig:
-      type: object
-      description: Configuration for an uptime check.
-      properties:
-        name:
-          type: string
-        displayName:
-          type: string
-        period:
-          type: string
-        timeout:
-          type: string
-        httpCheck:
-          type: object
-          properties:
-            path:
-              type: string
-            port:
-              type: integer
-            useSsl:
-              type: boolean
-    Dashboard:
-      type: object
-      description: A Cloud Monitoring dashboard.
-      properties:
-        name:
-          type: string
-        displayName:
-          type: string
-        gridLayout:
-          type: object
-        mosaicLayout:
-          type: object
-        rowLayout:
-          type: object
-        columnLayout:
-          type: object
-        dashboardFilters:
-          type: array
-          items:
-            type: object
     TimeSeries:
       type: object
       description: A collection of data points for a metric.
@@ -302,6 +223,76 @@ components:
                     format: date-time
               value:
                 type: object
+    AlertPolicy:
+      type: object
+      description: A policy for generating alerts.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        conditions:
+          type: array
+          items:
+            type: object
+        combiner:
+          type: string
+        enabled:
+          type: boolean
+        notificationChannels:
+          type: array
+          items:
+            type: string
+    Dashboard:
+      type: object
+      description: A Cloud Monitoring dashboard.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        gridLayout:
+          type: object
+        mosaicLayout:
+          type: object
+        rowLayout:
+          type: object
+        columnLayout:
+          type: object
+        dashboardFilters:
+          type: array
+          items:
+            type: object
+    UptimeCheckConfig:
+      type: object
+      description: Configuration for an uptime check.
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        period:
+          type: string
+        timeout:
+          type: string
+        httpCheck:
+          type: object
+          properties:
+            path:
+              type: string
+            port:
+              type: integer
+            useSsl:
+              type: boolean
+    ListDashboardsResponse:
+      type: object
+      properties:
+        dashboards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dashboard'
+        nextPageToken:
+          type: string
     ListTimeSeriesResponse:
       type: object
       properties:
@@ -318,13 +309,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TimeSeries'
-    ListDashboardsResponse:
+    ListUptimeCheckConfigsResponse:
       type: object
       properties:
-        dashboards:
+        uptimeCheckConfigs:
           type: array
           items:
-            $ref: '#/components/schemas/Dashboard'
+            $ref: '#/components/schemas/UptimeCheckConfig'
+        nextPageToken:
+          type: string
+    ListAlertPoliciesResponse:
+      type: object
+      properties:
+        alertPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertPolicy'
         nextPageToken:
           type: string
 externalDocs:
