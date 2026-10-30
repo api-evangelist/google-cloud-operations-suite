@@ -1,4 +1,4 @@
-# Google Cloud Operations Suite (google-cloud-operations-suite)
+# Google Cloud Observability
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,65 +66,138 @@
 
 Google Cloud Operations Suite (formerly Stackdriver) provides integrated monitoring, logging, and diagnostics for applications and infrastructure running on Google Cloud. It encompasses Cloud Monitoring, Cloud Logging, Cloud Trace, Cloud Profiler, and Error Reporting to deliver comprehensive observability, real-time visibility, alerting, log analysis, distributed tracing, and performance profiling across cloud environments.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-operations-suite/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-operations-suite/refs/heads/main/apis.yml)
+**Areas:** Error Reporting · Google Cloud · Logging · Monitoring · Observability · Profiling · Stackdriver · Tracing
 
-## Scope
+## Google Cloud Observability on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Observability is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-operations-suite/](https://apis.io/providers/google-cloud-operations-suite/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Error Reporting
-- Google Cloud
-- Logging
-- Monitoring
-- Observability
-- Operations
-- Profiling
-- Stackdriver
-- Tracing
+- [Google Cloud Operations Suite Entries:list API](https://apis.io/apis/google-cloud-operations-suite/google-cloud-operations-suite-entries-list-api/) — The Entries:list API from Google Cloud Operations Suite — 1 operation(s) for entries:list.
+- [Google Cloud Operations Suite Entries:write API](https://apis.io/apis/google-cloud-operations-suite/google-cloud-operations-suite-entries-write-api/) — The Entries:write API from Google Cloud Operations Suite — 1 operation(s) for entries:write.
+- [Google Cloud Operations Suite Projects API](https://apis.io/apis/google-cloud-operations-suite/google-cloud-operations-suite-projects-api/) — The Projects API from Google Cloud Operations Suite — 4 operation(s) for projects.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Cloud Operations Suite API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Operations Suite API provides a unified interface for managing observability across Google Cloud services, including monitoring metrics and dashboards, centralized logging, distributed tracing, continuous profiling, and automated error reporting. It integrates the capabilities of Cloud Monitoring, Cloud Logging, Cloud Trace, Cloud Profiler, and Error Reporting into a cohesive operations platform.
+- [Google Cloud Operations Suite Agentic Access](https://apis.io/agentic-access/google-cloud-operations-suite/google-cloud-operations-suite-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/products/operations](https://cloud.google.com/products/operations)
-- **Base URL:** `https://monitoring.googleapis.com`
+#### Collections (7)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://cloud.google.com/monitoring/docs/reference/v3/rest)
-- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/docs/authentication)
-- [Getting Started](https://cloud.google.com/monitoring/docs/quickstart)
-- [JSON Schema](json-schema/json-schema.yml) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](json-ld/json-ld.yml)
+- [Google Cloud Operations Suite Entries:list API](https://apis.io/collections/google-cloud-operations-suite/open-google-cloud-operations-suite-entries-list-api/)
+- [Google Cloud Operations Suite Entries:list Entries:write API](https://apis.io/collections/google-cloud-operations-suite/open-google-cloud-operations-suite-entries-write-api/)
+- [Google Cloud Operations Suite Entries:list Projects API](https://apis.io/collections/google-cloud-operations-suite/open-google-cloud-operations-suite-projects-api/)
+- [Google Cloud Operations Suite API](https://apis.io/collections/google-cloud-operations-suite/open-openapi/)
+- [Google Cloud Operations Suite Entries:list API](https://apis.io/collections/google-cloud-operations-suite/postman-google-cloud-operations-suite-entries-list-api/)
+- [Google Cloud Operations Suite Entries:list Entries:write API](https://apis.io/collections/google-cloud-operations-suite/postman-google-cloud-operations-suite-entries-write-api/)
+- [Google Cloud Operations Suite Entries:list Projects API](https://apis.io/collections/google-cloud-operations-suite/postman-google-cloud-operations-suite-projects-api/)
 
-## Common Properties
+#### Governance rules (1)
 
-- [GitHub Organization](https://github.com/GoogleCloudPlatform)
-- [Portal](https://cloud.google.com/products/operations)
-- [Getting Started](https://cloud.google.com/monitoring/docs/quickstart)
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Observability — jsonschema rules](https://apis.io/rules/google-cloud-operations-suite/google-cloud-operations-suite-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Operations Suite Domain Security](https://apis.io/security/google-cloud-operations-suite/google-cloud-operations-suite-domain-security/)
+- [Google Cloud Operations Suite Vulnerability Disclosure](https://apis.io/security/google-cloud-operations-suite/google-cloud-operations-suite-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Operations Suite Plans Pricing](https://apis.io/plans/google-cloud-operations-suite/google-cloud-operations-suite-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Operations Suite Rate Limits](https://apis.io/rate-limits/google-cloud-operations-suite/google-cloud-operations-suite-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Operations Suite Finops](https://apis.io/finops/google-cloud-operations-suite/google-cloud-operations-suite-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://cloud.google.com/products/observability)
 - [Documentation](https://cloud.google.com/products/operations)
-- [Authentication](https://cloud.google.com/docs/authentication)
+- [Getting started](https://cloud.google.com/monitoring/docs/quickstart)
+- [API reference](https://cloud.google.com/monitoring/api/ref_v3/rest)
 - [Pricing](https://cloud.google.com/stackdriver/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/support)
-- [J S O N L D Context](json-ld/json-ld.yml)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Blog](https://cloud.google.com/blog/products/management-tools)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudPlatform)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 45.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 49.0 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 39.5 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-operations-suite/](https://apis.io/providers/google-cloud-operations-suite/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Observability: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-operations-suite/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
